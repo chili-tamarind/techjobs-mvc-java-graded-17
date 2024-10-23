@@ -32,6 +32,10 @@ public class ListController {
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
         tableChoices.put("coreCompetency", JobData.getAllCoreCompetency());
+
+//      <!-- TO-DO #2: Complete the View Jobs By Category Table. -->
+//       Add View All Link. Modify tableChoices in ListController to include another key/value pair.
+        tableChoices.put("all", "View All");
     }
 
     @GetMapping(value = "")

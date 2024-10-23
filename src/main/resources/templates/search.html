@@ -12,7 +12,6 @@
 
   <form th:action="@{/search/results}" method = "post">
     <h2>Search by:</h2>
-
     <p>
             <span th:each="column : ${columns}">
                 <input
@@ -23,7 +22,6 @@
                         th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-
     </p>
 
     <p>
@@ -36,7 +34,10 @@
 
   <hr />
 
-  <!-- TODO #4 - Loop over the search results to display all job fields. -->
+  <!-- TO-DO #4 - Loop over the search results to display all job fields. -->
+    <div
+            th:replace="~{fragments :: list-jobs-fragment}">
+    </div>
 
 </div>
 
