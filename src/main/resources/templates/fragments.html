@@ -25,10 +25,24 @@
             </ul>
         </div>
     </div>
+
+    <!--Super Bonus Mission
+    Modify fragments.html to use the passed-in action choices to generate the navigation links.
+    -->
+    <div id="fragmentActionChoices">
+        <h2>View jobs by:</h2>
+        <ul>
+            <li id="fragmentActionChoicesList" th:each="action : ${actions}">
+                <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a>
+            </li>
+        </ul>
+    </div>
+
 </div>
 
+<!-- For the fragment to work properly in both files,
+ the variables passed in by model.addAttribute() must use the same names.-->
 
-<!-- For the fragment to work properly in both files, the variables passed in by model.addAttribute() must use the same names.-->
 <div th:fragment="list-jobs-fragment">
     <div th:each="job : ${jobs}"> <!-- For each Job object  -->
         <table class="job-listing">
@@ -40,21 +54,32 @@
                 <td>Name</td>
                 <td th:text="${job.name}"></td>
             </tr>
+
+            <!-- BONUS #3
+                In the tables of the job results, make each value (except name)
+                hyperlinked to a new listing of all jobs with that same value.
+            -->
+
             <tr>
                 <td>Employer</td>
-                <td th:text="${job.employer}"></td>
+            <!--  <td th:text="${job.employer}"></td>-->
+                <td><a th:href="@{/list/jobs(column='employer',value=${job.employer})}" th:text="${job.employer}"></a></td>
+
             </tr>
             <tr>
                 <td>Location</td>
-                <td th:text="${job.location}"></td>
+            <!--  <td th:text="${job.location}"></td>-->
+                <td><a th:href="@{/list/jobs(column='location',value=${job.location})}" th:text="${job.location}"></a></td>
             </tr>
             <tr>
                 <td>Position Type</td>
-                <td th:text="${job.positionType}"></td>
+                <!--  <td th:text="${job.positionType}"></td>-->
+                <td><a th:href="@{/list/jobs(column='positionType',value=${job.positionType})}" th:text="${job.positionType}"></a></td>
             </tr>
             <tr>
                 <td>Skill</td>
-                <td th:text="${job.coreCompetency}"></td>
+                <!--  <td th:text="${job.coreCompetency}"></td>-->
+                <td><a th:href="@{/list/jobs(column='coreCompetency',value=${job.coreCompetency})}" th:text="${job.coreCompetency}"></a></td>
             </tr>
         </table>
     </div>

@@ -1,3 +1,64 @@
+/* STUFF */
+body {
+    color: black;
+    margin-top: 200px;
+    position: relative;
+}
+
+/* General styles for all buttons */
+button, input[type="submit"] {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ /* Add space for scrolling */
+.spacer {
+    height: 1000px;
+}
+
+/* Append the fixed background div */
+body::after {
+    content: '';
+    display: block;
+    position: fixed;
+    bottom: 0px;  right: 0px;
+    width: 200px; height: 200px;
+
+    background-image: url('LaunchCode-logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+#fragmentActionChoices{
+    margin: 5px 100px 25px 100px;
+    color: white;
+}
+
+#fragmentActionChoicesList{
+    font-size: 1.25em; /* times the body font size */
+}
+
+#homepageImage{
+    float: center;
+    height: 500px;
+    background-image: url('LC-Carly.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#homepageHeader{
+    text-align: center;
+    padding: 50px 0px 10px 0px;
+}
+
+/* ________________________________ */
+
 .body-content {
     margin-top: 72px;
 }
@@ -16,6 +77,7 @@ td {
 
 tr:nth-child(odd) {
     background-color: #e4e4e4;
+    color: black;  /* STUFF */
 }
 
 .centeredTable {
@@ -31,6 +93,13 @@ table.job-listing {
 
 table.job-listing td:first-child {
     font-weight: bold;
+    color: #2e4b6b;
+    text-transform: uppercase;
+
+    /*BONUS #2
+        In the tables displaying the full job data, find a way to manipulate
+        the font, style, capitalization, etc. to further distinguish the labels from the data
+    */
 }
 
 table.job-listing td:last-child {

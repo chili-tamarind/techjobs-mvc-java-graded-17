@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="~{fragments :: head}">
 </head>
 <body>
@@ -12,8 +12,17 @@
 
   <form th:action="@{/search/results}" method = "post">
     <h2>Search by:</h2>
-    <p>
-            <span th:each="column : ${columns}">
+
+      <!--      MANUAL CHECK HERE-->
+      <p>
+            <span> <input  type="radio"  name="manualCheck"/>
+                <label> Manual Check </label>
+            </span>
+      </p>
+
+      <!--      NOT CATCHING -->
+      <p>
+            <span th:each="column : ${columnChoices}">
                 <input
                         type="radio"
                         name="searchType"
@@ -22,11 +31,14 @@
                         th:checked="${column.key == 'all'}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-    </p>
+      </p>
 
     <p>
-      <label for="searchTerm">Keyword:</label>
-      <input type="text" name="searchTerm" id="searchTerm" />
+        <!--  BONUS #1
+        <label for="searchTerm">Keyword:</label>
+        <input type="text" name="searchTerm" id="searchTerm"
+        />-->
+        <label> Keyword: <input type="text" name="searchTerm" th:value="${searchTerm}" /> </label>
     </p>
 
     <input type="submit" value="Search" />

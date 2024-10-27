@@ -8,14 +8,22 @@
 
 <div th:replace="~{fragments :: page-header}"></div>
 
-<div class="container body-content">
-  <h2>View jobs by:</h2>
-  <ul>
-    <li th:each="action : ${actions}">
-      <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a>
-    </li>
-  </ul>
-</div>
+<h2 id="homepageHeader">
+    <a href="https://education.launchcode.org/java-web-dev-curriculum/assignments/techjobs-mvc/index.html" target="_blank">
+        Welcome to Assignment #3 - Tech Jobs (MVC Edition)
+    </a>
+</h2>
+<div id="homepageImage"></div>
+
+<!--Super Bonus Mission-->
+<!--<div class="container body-content">-->
+<!--  <h2>View jobs by:</h2>-->
+<!--  <ul>-->
+<!--    <li th:each="action : ${actions}">-->
+<!--      <a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</div>-->
 
 </body>
 
