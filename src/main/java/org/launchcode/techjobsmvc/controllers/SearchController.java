@@ -27,6 +27,7 @@ public class SearchController extends TechJobsController{
     @GetMapping(value = "")
     public String search(Model model) {
         model.addAttribute("columns", columnChoices);
+        //model.addAttribute("actions", actionChoices);
         return "search";
     }
 
@@ -54,6 +55,7 @@ public class SearchController extends TechJobsController{
 
         //Pass ListController.columnChoices into the view, as the existing search handler does.
         model.addAttribute("columns", columnChoices);
+        //model.addAttribute("actions", actionChoices);
 
         return "search";
     }
