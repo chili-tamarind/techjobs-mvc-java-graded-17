@@ -33,8 +33,8 @@ public class SearchController {
     public String displaySearchResults(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
 
         ArrayList<Job> jobs;
-        model.addAttribute("searchType", searchType);
-        model.addAttribute("searchTerm", searchTerm);
+        //model.addAttribute("searchType", searchType); - Not needed since using @RequestParam above
+        //model.addAttribute("searchTerm", searchTerm); - Affecting the model, not getting from the model
 
         // If the user enters “all” in the search box, or if they leave the box empty, call the findAll() method from JobData.
         if (searchTerm.equals("all") || searchTerm.isEmpty()) {
